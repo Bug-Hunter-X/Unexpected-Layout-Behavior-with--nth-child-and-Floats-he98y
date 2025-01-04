@@ -1,0 +1,13 @@
+A more robust solution would be to avoid relying on `:nth-child` and instead clear floats on the parent container.  Here's an example:
+
+```css
+.container {
+  overflow: auto; /* or clearfix */
+}
+div {
+  width: 50%;
+  float: left;
+}
+```
+
+By using `overflow: auto` (or a clearfix technique), the parent container automatically handles the clearing of floats within it. This approach is much more flexible and avoids the potential pitfalls of using `:nth-child` for layout purposes.  This solution is adaptable to more dynamic content changes; adding or removing elements before the second div won't disrupt the layout.

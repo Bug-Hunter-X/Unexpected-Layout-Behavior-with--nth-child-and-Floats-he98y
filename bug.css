@@ -1,0 +1,15 @@
+The following CSS code snippet demonstrates a common error that can lead to unexpected behavior: 
+```css
+div {
+  width: 50%;
+  float: left;
+}
+div:nth-child(2) { /* This line might be wrong */
+  clear: left;
+}
+```
+This code aims to arrange two divs side by side. The `clear: left;` on the second div is intended to prevent it from floating next to the first div, forcing it onto a new line.  However, this approach might be problematic if more divs are added or the layout changes.
+
+The issue is that `:nth-child(2)` is too specific. If another element (such as a paragraph or a heading) is inserted before the second div, the clearing rule won't apply, breaking the layout.
+
+The error is not immediately obvious and can lead to frustrating debugging sessions, especially in complex layouts.
